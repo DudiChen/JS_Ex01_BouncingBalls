@@ -1,7 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/index.css" type="text/css">
-
+        <script src="js/index.js"></script>
     </head>
     <body>
         <button onclick="myMove()">Click Me</button>
@@ -10,23 +10,5 @@
             <!-- rectangle div with borders and size -->
         </div>
     </body>
-    <script>
-        var id = null;
-        function myMove() {
-            var elem = document.getElementById("my_ball");
-            var pos = 0;
-            clearInterval(id);
-            id = setInterval(frame, 10);
-            
-            function frame() {
-                if (pos == 350) {
-                    clearInterval(id);
-                } else {
-                    pos++;
-                    elem.style.top = pos + 'px';
-                    elem.style.left = pos + 'px';
-                }
-            }
-        }
-    </script>
+    
 </html>
