@@ -1,0 +1,10 @@
+#main_board {
+    border: 1rem outset blue; ;
+    width:90%;
+    height: 95%;
+    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
