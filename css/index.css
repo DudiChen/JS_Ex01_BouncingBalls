@@ -2,9 +2,18 @@
     border: 1rem outset blue; ;
     width:90%;
     height: 95%;
+
+    position:relative;
     
     align-items: center;
     display: flex;
     justify-content: center;
     margin: auto;
+}
+
+#my_ball {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: blue;
 }
