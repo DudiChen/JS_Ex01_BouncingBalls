@@ -1,14 +1,10 @@
 #main_board {
     border: 1rem outset blue; ;
-    width:500;
-    height: 300;
+    width: 30vw;
+    height: 40vh;
 
     position:relative;
-    
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin: auto;
+
 }
 
 #my_ball {
@@ -16,4 +12,5 @@
     height: 50px;
     position: absolute;
     background-color: blue;
+    border-radius: 50%;
 }
