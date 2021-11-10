@@ -22,6 +22,40 @@ function myMove() {
     }
 }
 
+function allMove() {
+    let ballList = [];
+    const board = document.getElementById("main_board");
+
+    for(let i = 1; i <= 4 ; i++) {
+        ballList[i] = {
+            element: document.getElementById(`ball${i}`),
+            dir_x: Math.random() > 0.5 ? 1 : -1,
+            dir_y: Math.random() > 0.5 ? 1 : -1
+        }
+
+        randomizeStartLocation(ballList[i].element, board)
+    }
+
+    clearInterval(id);
+    id = setInterval(frame, 10);
+
+    function frame() {
+        
+        for(let i = 1 ; i <= 4 ; i++) {
+            let currentBall = ballList[i].element;
+
+            currentBall.style.top = currentBall.offsetTop + ballList[i].dir_y + 'px';
+            currentBall.style.left = currentBall.offsetLeft + ballList[i].dir_x + 'px';
+            
+            if(currentBall.offsetTop + currentBall.offsetHeight == board.offsetHeight || currentBall.offsetTop == 0)
+                ballList[i].dir_y = -1 * ballList[i].dir_y
+    
+            if(currentBall.offsetLeft + currentBall.offsetWidth == board.offsetWidth || currentBall.offsetLeft == 0)
+                ballList[i].dir_x = -1 * ballList[i].dir_x
+        }
+    }
+}
+
 function randomizeStartLocation(ball, board) {
     if(Math.floor(Math.random() * 2)) {
         ball.style.top = Math.floor(Math.random() * (board.offsetHeight - ball.offsetHeight - 1));
